@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
+import { BaseScene, createRexButton } from './SampleGameTools';
 
-export class SampleGame extends Phaser.Scene {
+export class SampleGameTitle extends BaseScene {
   preload() {
     this.load.setBaseURL('/')
     this.load.image('sky', 'space3.png')
@@ -24,5 +25,22 @@ export class SampleGame extends Phaser.Scene {
     logo.setCollideWorldBounds(true)
 
     particles.startFollow(logo)
+    const buttonConfig = this.rexUI!.add.buttons({
+      x: 400,
+      y: 500,
+      width: 300,
+
+      orientation: 'x',
+
+      buttons: [
+        createRexButton(this, 'Start Game'),
+      ]
+    });
+    const buttons = buttonConfig.layout().drawBounds(this.add.graphics(), 0xff0000);
+    buttons.on("button.click", (button: Phaser.GameObjects.GameObject) => {
+      if (button.name === 'Start Game') {
+        this.scene.start('SampleGameMain')
+      }
+    });
   }
 }

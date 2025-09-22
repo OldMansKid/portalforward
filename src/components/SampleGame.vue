@@ -1,23 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import Phaser from 'phaser'
-import { SampleGame } from '@/stores/SampleGame'
+import { createGameConfig } from '@/stores/SampleGameTools'
+import { SampleGameTitle } from '@/stores/SampleGameTitle'
 
 onMounted(() => {
-  const config: Phaser.Types.Core.GameConfig = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    scene: [SampleGame],
-    parent: 'game-container',
-    physics: {
-      default: 'arcade',
-      arcade: {
-        gravity: { x: 0, y: 200 },
-        debug: false,
-      },
-    },
-  }
+  const config: Phaser.Types.Core.GameConfig = createGameConfig([SampleGameTitle], 'game-container')
 
   new Phaser.Game(config)
 })

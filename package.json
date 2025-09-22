@@ -20,6 +20,7 @@
     "@fontsource/roboto": "^5.2.8",
     "@mdi/font": "^7.4.47",
     "phaser": "^3.90.0",
+    "phaser3-rex-plugins": "^1.80.16",
     "pinia": "^3.0.3",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1",
