@@ -1,7 +1,11 @@
+<script lang="ts" setup>
+import SampleGame from '@/components/SampleGame.vue'
+</script>
+
 <template>
   <div class="game-view">
-    <h1>Game View</h1>
-    <p>Welcome to the Game View!</p>
+    <label>Game View</label>
+    <SampleGame />
   </div>
 </template>
 
@@ -9,5 +13,7 @@
 .game-view {
   padding: 2rem;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 </style>

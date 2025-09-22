@@ -20,6 +20,9 @@ const showMenu = ref(false)
           <v-list-item link to="/about" @click="showMenu = false">
             <v-list-item-title>About</v-list-item-title>
           </v-list-item>
+          <v-list-item link to="/games" @click="showMenu = false">
+            <v-list-item-title>Games</v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
       <v-container>
@@ -32,7 +35,10 @@ const showMenu = ref(false)
 <style scoped>
 header {
   line-height: 1.5;
-  max-height: 100vh;
+}
+
+.v-app {
+  height: 100%;
 }
 
 .logo {
@@ -74,8 +80,6 @@ nav a:first-of-type {
 #main-content {
   display: flex;
   flex-direction: column;
-  gap: var(--section-gap);
-  padding: var(--section-gap);
   width: 100%;
   background-color: aqua;
 }
