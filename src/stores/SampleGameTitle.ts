@@ -2,15 +2,18 @@ import Phaser from 'phaser'
 import { BaseScene, createRexButton } from './SampleGameTools';
 
 export class SampleGameTitle extends BaseScene {
+  constructor() {
+    super('SampleGameTitle')
+  }
   preload() {
     this.load.setBaseURL('/')
-    this.load.image('sky', 'space3.png')
+    this.load.image('space', 'space3.png')
     this.load.image('logo', 'phaser3-logo.png')
     this.load.image('red', 'red.png')
   }
 
   create() {
-    this.add.image(400, 300, 'sky')
+    this.add.image(400, 300, 'space')
 
     const particles = this.add.particles(0, 0, 'red', {
       speed: 100,
@@ -39,7 +42,7 @@ export class SampleGameTitle extends BaseScene {
     const buttons = buttonConfig.layout().drawBounds(this.add.graphics(), 0xff0000);
     buttons.on("button.click", (button: Phaser.GameObjects.GameObject) => {
       if (button.name === 'Start Game') {
-        this.scene.start('SampleGameMain')
+        this.scene.start('SampleGameLevel1')
       }
     });
   }

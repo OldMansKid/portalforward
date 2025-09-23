@@ -3,9 +3,10 @@ import { onMounted } from 'vue'
 import Phaser from 'phaser'
 import { createGameConfig } from '@/stores/SampleGameTools'
 import { SampleGameTitle } from '@/stores/SampleGameTitle'
+import { SampleGameLevel1 } from '@/stores/SampleGameLevel1'
 
 onMounted(() => {
-  const config: Phaser.Types.Core.GameConfig = createGameConfig([SampleGameTitle], 'game-container')
+  const config: Phaser.Types.Core.GameConfig = createGameConfig([SampleGameTitle, SampleGameLevel1], 'game-container')
 
   new Phaser.Game(config)
 })
