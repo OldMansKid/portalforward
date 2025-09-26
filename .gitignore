@@ -16,6 +16,8 @@ coverage
 
 /cypress/videos/
 /cypress/screenshots/
+/src/backend/target/
+/src/backend/.cargo/
 
 # Editor directories and files
 .vscode/*
